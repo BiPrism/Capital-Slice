@@ -19,6 +19,25 @@
 
 ---
 
+## Customer Fit Quick Reference
+
+| Location | Primary Demo | Pizza Fit | Price Sens. | Positioning |
+|----------|--------------|-----------|-------------|-------------|
+| Eastern Market | Affluent foodies | HIGH | LOW | Quality ingredients |
+| Dupont Circle | Urban professionals | MED-HIGH | LOW | Quick quality |
+| National Mall | Tourists, families | HIGH | MEDIUM | Classic & portable |
+| Georgetown | Upscale leisure | MEDIUM | LOW | Premium casual |
+| U Street | Nightlife/music | HIGH | MEDIUM | Fun & bold |
+| Convention Ctr | Business travelers | HIGH | VERY LOW | Fast & professional |
+| Arena | Sports fans | VERY HIGH | MEDIUM | Game-day fuel |
+| Columbia Hts | Neighborhood | HIGH | MED-HIGH | Value & friendly |
+| H Street | Arts/culture | HIGH | MEDIUM | Local & authentic |
+| Navy Yard | Baseball/Wharf | HIGH/MED | MEDIUM | Game-day energy |
+
+**Note:** These are qualitative assessments based on location characteristics. Validate with Post-Saturday Review data over time.
+
+---
+
 ## Detailed Location Profiles
 
 ### 1. Eastern Market (Capitol Hill)
@@ -30,6 +49,14 @@
 - Strong breakfast/brunch culture (breakfast pizza optimal)
 - Metro accessible (Eastern Market station)
 - High-income Capitol Hill demographic
+
+**Customer Fit:**
+| Factor | Assessment | Notes |
+|--------|------------|-------|
+| Primary Demographic | Affluent locals, foodies | Capitol Hill professionals, young families |
+| Pizza Fit | HIGH | Artisan/quality pizza resonates with foodie culture |
+| Price Sensitivity | LOW | Will pay premium for quality ingredients |
+| Recommended Positioning | Quality over speed | Emphasize fresh ingredients, unique toppings |
 
 **Scoring:**
 | Factor | Morning | Afternoon |
@@ -56,6 +83,14 @@
 - Both breakfast and lunch viable
 - Sunday farmers market (Saturday still active area)
 
+**Customer Fit:**
+| Factor | Assessment | Notes |
+|--------|------------|-------|
+| Primary Demographic | Urban professionals, embassy crowd | Mixed ages, educated, cosmopolitan |
+| Pizza Fit | MEDIUM-HIGH | Convenient quality lunch; competes with many options |
+| Price Sensitivity | LOW | Affluent area, quality expected |
+| Recommended Positioning | Quick quality lunch | Speed matters for busy professionals |
+
 **Scoring:**
 | Factor | Morning | Afternoon |
 |--------|---------|-----------|
@@ -79,6 +114,14 @@
 - Tourist demographic willing to spend
 - All-day viability in good weather
 - Special events (rallies, festivals) spike traffic
+
+**Customer Fit:**
+| Factor | Assessment | Notes |
+|--------|------------|-------|
+| Primary Demographic | Tourists, families | Out-of-towners, mixed income, kids common |
+| Pizza Fit | HIGH | Familiar, kid-friendly, easy to eat walking |
+| Price Sensitivity | MEDIUM | Tourist budgets vary; captive but cost-aware |
+| Recommended Positioning | Classic & convenient | Recognizable flavors, quick service, portable |
 
 **Scoring:**
 | Factor | Morning | Afternoon |
@@ -105,6 +148,14 @@
 - Upscale dining spillover
 - Premium pricing acceptable
 
+**Customer Fit:**
+| Factor | Assessment | Notes |
+|--------|------------|-------|
+| Primary Demographic | Upscale leisure crowd | Joggers, shoppers, dating couples, tourists |
+| Pizza Fit | MEDIUM | Competes with sit-down dining; casual bite appeal |
+| Price Sensitivity | LOW | Expect to pay Georgetown prices |
+| Recommended Positioning | Premium casual | Quality presentation, shareable options |
+
 **Scoring:**
 | Factor | Morning | Afternoon |
 |--------|---------|-----------|
@@ -128,6 +179,14 @@
 - Concert/venue proximity (9:30 Club, Lincoln Theatre)
 - Diverse, food-adventurous demographic
 - Evening-focused activity
+
+**Customer Fit:**
+| Factor | Assessment | Notes |
+|--------|------------|-------|
+| Primary Demographic | Nightlife crowd, music fans | 20s-30s, diverse, adventurous eaters |
+| Pizza Fit | HIGH | Perfect late-night food, concert pre/post fuel |
+| Price Sensitivity | MEDIUM | Will pay for quality but not luxury prices |
+| Recommended Positioning | Fun & bold | Creative toppings, late-night vibes |
 
 **Scoring:**
 | Factor | Morning | Afternoon |
@@ -154,6 +213,14 @@
 - Weather-independent (indoor venue)
 - DEAD when no events
 
+**Customer Fit:**
+| Factor | Assessment | Notes |
+|--------|------------|-------|
+| Primary Demographic | Business travelers, convention attendees | Expense accounts, time-pressed, captive |
+| Pizza Fit | HIGH | Quick lunch between sessions, familiar choice |
+| Price Sensitivity | VERY LOW | On expense accounts, convenience > cost |
+| Recommended Positioning | Fast & professional | Speed is critical, clean presentation |
+
 **Scoring:**
 | Factor | Morning | Afternoon |
 |--------|---------|-----------|
@@ -177,6 +244,14 @@
 - Pre-game hunger window is prime time
 - Pizza + sports = natural pairing
 - Weather-independent (indoor)
+
+**Customer Fit:**
+| Factor | Assessment | Notes |
+|--------|------------|-------|
+| Primary Demographic | Sports fans, families | Mixed income, game-day excitement, hungry crowds |
+| Pizza Fit | VERY HIGH | Pizza + sports is a natural pairing |
+| Price Sensitivity | MEDIUM | Expect stadium-area pricing but not gouging |
+| Recommended Positioning | Game-day fuel | Volume, speed, classic flavors, combo deals |
 
 **Scoring:**
 | Factor | Morning | Afternoon |
@@ -203,6 +278,14 @@
 - Less direct competition
 - Lower risk, lower ceiling
 
+**Customer Fit:**
+| Factor | Assessment | Notes |
+|--------|------------|-------|
+| Primary Demographic | Neighborhood residents | Families, young professionals, diverse community |
+| Pizza Fit | HIGH | Neighborhood comfort food, family-friendly |
+| Price Sensitivity | MEDIUM-HIGH | Residential = more price-conscious than tourist areas |
+| Recommended Positioning | Neighborhood value | Fair prices, consistent quality, friendly service |
+
 **Scoring:**
 | Factor | Morning | Afternoon |
 |--------|---------|-----------|
@@ -226,6 +309,14 @@
 - Streetcar delivers foot traffic
 - Growing food/arts destination
 - Event-dependent performance
+
+**Customer Fit:**
+| Factor | Assessment | Notes |
+|--------|------------|-------|
+| Primary Demographic | Arts/culture crowd, locals | 20s-40s, hip, neighborhood pride |
+| Pizza Fit | HIGH | Casual street food fits festival/arts vibe |
+| Price Sensitivity | MEDIUM | Support local business mentality but budget-aware |
+| Recommended Positioning | Local & authentic | Emphasize DC roots, creative options |
 
 **Scoring:**
 | Factor | Morning | Afternoon |
@@ -252,6 +343,14 @@
 - Wharf = dining destination year-round
 - Pre-game crowds hungry and spending
 - Waterfront atmosphere
+
+**Customer Fit:**
+| Factor | Assessment | Notes |
+|--------|------------|-------|
+| Primary Demographic | Baseball fans, Wharf visitors | Game day: families, groups; Non-game: upscale diners |
+| Pizza Fit | HIGH (game day) / MEDIUM (non-game) | Game crowds love pizza; Wharf crowd has fine dining options |
+| Price Sensitivity | MEDIUM | Stadium pricing expected game day; Wharf = mixed |
+| Recommended Positioning | Game-day energy | Volume on game days; quality focus on Wharf days |
 
 **Scoring:**
 | Factor | Morning | Afternoon |

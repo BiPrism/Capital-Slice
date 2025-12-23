@@ -1,6 +1,6 @@
 # Week 2 Progress: Testing, Evaluating & Improving
 
-**Last Updated:** December 22, 2025
+**Last Updated:** December 23, 2025
 **Status:** In Progress
 
 ---
@@ -22,8 +22,8 @@
 | No seasonality awareness (MLB in December) | Medium | Fixed |
 | Home vs Away game confusion | Medium | Fixed |
 | Date calculation error | Low | Noted |
-| Holiday context missing | Medium | Not started |
-| Base score logic undocumented | Medium | Identified |
+| Holiday context missing | Medium | Fixed |
+| Base score logic undocumented | Medium | Fixed |
 
 ### 3. Improved Data Source Reliability
 
@@ -61,21 +61,20 @@ Updated `data-gathering-guide.md` with:
 ## Still To Do
 
 ### Identified Improvements Not Yet Implemented
-1. **Holiday patterns** - Special handling for Christmas week, New Year's, July 4th
-2. **Time-split weather** - Morning vs afternoon weather separately in scoring
-3. **Scoring refinements** - Adjust base scores based on test experience
-4. **Data validation** - Automated checks for date errors, missing data
-5. **Base score documentation** - Explain how star ratings map to numbers
+1. **Data validation** - Automated checks for date errors, missing data
 
-### Open Question
+### Recently Completed
+2. **Base score documentation** - Added star-to-score mapping in `scoring-algorithm.md`
+3. **Holiday patterns** - Added Holiday Awareness section to `data-gathering-guide.md` and Holiday Modifier (Step 4b) to `scoring-algorithm.md`
+4. **Time-split weather** - Added explicit guidance in Step 2 and updated worked example to show separate morning/afternoon weather calculations
+5. **Scoring refinements** - Converted to feedback loop: Added Post-Saturday Review template to `data-gathering-guide.md` for collecting actual revenue data to calibrate scores over time
+6. **Customer Fit profiles** - Added qualitative demographic/pizza fit/price sensitivity assessments to each location in `location-scoring-reference.md`
+7. **Product Testing Framework** - New file `product-testing-framework.md` with conversion rate estimation, A/B test protocols, margin calculations, and decision framework for testing slice size, shape, pricing, combos
+
+### Open Question (Resolved)
 > "Where does the base score come from?"
 
-The base scores were derived from Brian's Site Analysis document star ratings:
-- ★★★★★ morning → 85 base score
-- ★ morning → 10-20 base score
-- Event-dependent locations have low base but high event modifiers
-
-**Gap identified:** The exact mapping from stars to numbers isn't documented in the skill.
+**Answer:** Base scores come from Brian's Site Analysis star ratings. The mapping is now documented in `scoring-algorithm.md` under "Base Score Derivation".
 
 ---
 

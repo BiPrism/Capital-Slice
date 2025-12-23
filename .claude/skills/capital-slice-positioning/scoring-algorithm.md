@@ -9,7 +9,7 @@ This document defines the exact scoring logic for ranking locations.
 Each location receives a **Morning Score** and **Afternoon Score** calculated as:
 
 ```
-Score = Base Score + Weather Modifier + Event Modifier + Competition Modifier
+Score = Base Score + Holiday Modifier + Weather Modifier + Event Modifier + Competition Modifier
 ```
 
 The algorithm then:
@@ -34,6 +34,22 @@ The algorithm then:
 | Columbia Heights | 55 | 55 |
 | H Street | 25 | 70 |
 | Navy Yard / Wharf | 30 | 75 |
+
+### Base Score Derivation
+
+Base scores come from the star ratings in `Capital Slice Site Analysis.md`:
+
+| Star Rating | Score Range |
+|-------------|-------------|
+| ★★★★★ | 85 |
+| ★★★★ | 70-85 |
+| ★★★ | 50-65 |
+| ★★ | 20-30 |
+| ★ | 10 |
+
+Scores vary within a tier based on location strength (e.g., Georgetown afternoon is 85 vs H Street afternoon at 70 — both ★★★★ but Georgetown is a stronger destination).
+
+**Event-dependent locations:** Convention Center, Capital One Arena, and Navy Yard are rated ★★★★★* in the Site Analysis (asterisk = "only with events"). They have low base scores (10) because they're dead without events. Their value comes from event modifiers (+50 to +70), not baseline traffic.
 
 ---
 
@@ -83,6 +99,21 @@ The algorithm then:
 ```
 Weather Modifier = Temperature Mod + Precipitation Mod + Wind Mod
 ```
+
+### Time-Split Weather (Important!)
+
+Calculate **separate weather modifiers** for morning and afternoon:
+
+| Time Period | Use For | Typical Hours |
+|-------------|---------|---------------|
+| Morning | Morning scores | 7 AM - 12 PM conditions |
+| Afternoon | Afternoon scores | 2 PM - 8 PM conditions |
+
+**Why this matters:** Weather often changes throughout the day. A rainy morning that clears up means:
+- Morning outdoor locations score poorly (rain penalty)
+- Afternoon outdoor locations score well (clear weather bonus)
+
+**Data source:** Use the time-split weather data from `data-gathering-guide.md` Weather Data Template.
 
 **Example:** 70°F, 30% rain, 12 mph wind at National Mall
 - Temperature: +10 (65-78°F range)
@@ -153,17 +184,57 @@ If confirmed **closed** (holiday, weather cancellation):
 
 ---
 
+## Step 4b: Holiday Modifier
+
+Apply these modifiers when the target Saturday falls on or near a major holiday.
+
+### Holiday Modifier Table
+
+| Holiday Period | All Locations | Exceptions |
+|----------------|---------------|------------|
+| Christmas Eve (Dec 24) | -40 | Arena +0 if game |
+| Christmas Day (Dec 25) | -50 | Arena +0 if game |
+| Christmas Week (Dec 26-30) | -20 | Arena +0 if game |
+| New Year's Eve (Dec 31) | -20 | Arena +20 (evening events) |
+| New Year's Day (Jan 1) | -30 | Arena +0 if game |
+| July 4th | +0 | National Mall +50 |
+| Summer Holiday Wknd | +10 (tourist locations) | — |
+
+**Tourist locations:** National Mall, Georgetown Waterfront, Eastern Market, Navy Yard
+
+### Eastern Market Holiday Status
+
+| Situation | Morning Modifier |
+|-----------|------------------|
+| Confirmed CLOSED (holiday) | -40 |
+| Uncertain (holiday weekend) | -20 |
+| Confirmed OPEN | +0 |
+
+### How to Apply
+
+1. Check if target date is a holiday (see `data-gathering-guide.md` Holiday Awareness section)
+2. Apply the holiday modifier to base scores BEFORE other modifiers
+3. Note holiday status in the memo
+
+**Example:** Christmas Week Saturday
+- Eastern Market morning: 85 (base) - 20 (holiday) - 40 (closed) = 25
+- Arena afternoon with game: 10 (base) + 0 (holiday exception) + 60 (game) = 70
+
+---
+
 ## Step 5: Calculate Final Scores
 
 ### For Each Location, Calculate:
 
 ```
 Morning Score = Morning Base
+              + Holiday Modifier (if applicable)
               + Weather Modifier (morning conditions)
               + Event Modifier (morning-relevant events)
               + Competition Modifier
 
 Afternoon Score = Afternoon Base
+                + Holiday Modifier (if applicable)
                 + Weather Modifier (afternoon conditions)
                 + Event Modifier (afternoon-relevant events)
                 + Competition Modifier
@@ -219,35 +290,45 @@ If both trucks would select the same afternoon location:
 ## Step 7: Worked Example
 
 ### Input Data
-- **Weather:** 72°F, 15% rain, 8 mph wind
+- **Morning Weather:** 58°F, 40% rain, 12 mph wind
+- **Afternoon Weather:** 72°F, 10% rain, 8 mph wind
 - **Events:** Nationals game at 4:05 PM
 - **Competition:** None known
 
 ### Calculate Weather Modifiers
 
-Morning (assume similar to overall):
-- Temperature: +10 (65-78°F)
-- Precipitation: +15 (outdoor), +5 (other), +0 (indoor event)
+**Morning Weather Modifiers:**
+- Temperature: +0 (55-64°F range)
+- Precipitation: +0 outdoor / +0 other / +5 indoor event (21-40% range)
+- Wind: -5 (10-20 mph)
+- **Morning total:** -5 outdoor, -5 other, +0 indoor event
+
+**Afternoon Weather Modifiers:**
+- Temperature: +10 (65-78°F range)
+- Precipitation: +15 outdoor / +5 other / +0 indoor event (0-20% range)
 - Wind: +0 (<10 mph)
+- **Afternoon total:** +25 outdoor, +15 other, +10 indoor event
 
 ### Calculate Location Scores
 
-| Location | Morning Base | Weather | Events | Total Morning | Afternoon Base | Weather | Events | Total Afternoon |
-|----------|-------------|---------|--------|---------------|----------------|---------|--------|-----------------|
-| Eastern Market | 85 | +15 | +0 | **100** | 30 | +15 | +0 | **45** |
-| Dupont Circle | 75 | +15 | +0 | **90** | 60 | +15 | +0 | **75** |
-| National Mall | 50 | +25 | +0 | **75** | 80 | +25 | +0 | **105** |
-| Georgetown | 40 | +25 | +0 | **65** | 85 | +25 | +0 | **110** |
-| U Street | 20 | +15 | +0 | **35** | 65 | +15 | +0 | **80** |
-| Convention Ctr | 10 | +10 | +0 | **20** | 10 | +10 | +0 | **20** |
-| Arena | 10 | +10 | +0 | **20** | 10 | +10 | +0 | **20** |
-| Columbia Hts | 55 | +15 | +0 | **70** | 55 | +15 | +0 | **70** |
-| H Street | 25 | +15 | +0 | **40** | 70 | +15 | +0 | **85** |
-| Navy Yard | 30 | +25 | +10 | **65** | 75 | +25 | +50 | **150** |
+Note how the marginal morning weather reduces morning scores, while the excellent afternoon weather boosts afternoon scores.
+
+| Location | Morning Base | Weather | Events | Total AM | Afternoon Base | Weather | Events | Total PM |
+|----------|-------------|---------|--------|----------|----------------|---------|--------|----------|
+| Eastern Market | 85 | -5 | +0 | **80** | 30 | +15 | +0 | **45** |
+| Dupont Circle | 75 | -5 | +0 | **70** | 60 | +15 | +0 | **75** |
+| National Mall | 50 | -5 | +0 | **45** | 80 | +25 | +0 | **105** |
+| Georgetown | 40 | -5 | +0 | **35** | 85 | +25 | +0 | **110** |
+| U Street | 20 | -5 | +0 | **15** | 65 | +15 | +0 | **80** |
+| Convention Ctr | 10 | +0 | +0 | **10** | 10 | +10 | +0 | **20** |
+| Arena | 10 | +0 | +0 | **10** | 10 | +10 | +0 | **20** |
+| Columbia Hts | 55 | -5 | +0 | **50** | 55 | +15 | +0 | **70** |
+| H Street | 25 | -5 | +0 | **20** | 70 | +15 | +0 | **85** |
+| Navy Yard | 30 | -5 | +10 | **35** | 75 | +25 | +50 | **150** |
 
 ### Morning Assignment
-1. Eastern Market: 100 → **Truck A**
-2. Dupont Circle: 90 → **Truck B**
+1. Eastern Market: 80 → **Truck A**
+2. Dupont Circle: 70 → **Truck B**
 
 ### Afternoon Decision
 

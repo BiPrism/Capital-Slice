@@ -17,6 +17,80 @@ This guide outlines how to collect the weekly data needed for positioning decisi
 
 ---
 
+## Holiday Awareness (Check First!)
+
+Before gathering data, check if the target Saturday falls on or near a major holiday. Holidays significantly affect traffic patterns.
+
+### Holiday Impact Reference
+
+| Holiday | Typical Date | Eastern Market | Tourist Areas | Event Venues | Overall Impact |
+|---------|--------------|----------------|---------------|--------------|----------------|
+| New Year's Day | Jan 1 | CLOSED | Low | Variable | Low traffic |
+| MLK Weekend | 3rd Mon Jan | Open | Moderate | Low | Normal+ |
+| Presidents Day Wknd | 3rd Mon Feb | Open | Moderate | Low | Normal |
+| Easter Weekend | Variable | Check | High | Low | Tourist surge |
+| Memorial Day Wknd | Last Mon May | Open | HIGH | Low | Tourist surge |
+| July 4th | Jul 4 | Open | EXCEPTIONAL | Low | Mall is packed |
+| Labor Day Wknd | 1st Mon Sep | Open | High | Low | Tourist surge |
+| Columbus Day Wknd | 2nd Mon Oct | Open | Moderate | Low | Normal+ |
+| Veterans Day | Nov 11 | Open | Moderate | Low | Normal |
+| Thanksgiving Wknd | 4th Thu Nov | Fri: Check, Sat: Open | Moderate | Low | Mixed |
+| Christmas Eve | Dec 24 | CLOSED | Low | Low | Very low |
+| Christmas Day | Dec 25 | CLOSED | Very Low | Low | Dead |
+| Christmas Week | Dec 26-30 | Check | Low-Moderate | Low | Reduced |
+| New Year's Eve | Dec 31 | Check | Moderate | HIGH (Arena) | Evening focus |
+
+### Holiday-Specific Guidance
+
+**Christmas Week (Dec 24-31):**
+- Eastern Market flea market typically closed Dec 24-25, may be reduced Dec 26-31
+- Office/business areas dead (Convention Center unlikely to have events)
+- Tourist spots (National Mall) have SOME visitors but reduced
+- Residential areas (Columbia Heights) may be stronger relative to usual
+- Arena may have holiday events (Wizards/Capitals games common)
+- **Scoring adjustment:** -20 to all base scores except Arena (if game scheduled)
+
+**New Year's Eve/Day:**
+- Dec 31 evening: Downtown/Arena area for celebrations
+- Jan 1: Most locations slow, Eastern Market closed
+- **Scoring adjustment:** Jan 1 gets -30 to outdoor locations
+
+**July 4th Weekend:**
+- National Mall is THE destination (fireworks, celebrations)
+- Massive crowds but also massive competition and logistics challenges
+- Consider: Is the extra volume worth the operational difficulty?
+- **Scoring adjustment:** National Mall +50, but note HIGH COMPETITION flag
+
+**Summer Holiday Weekends (Memorial Day, Labor Day):**
+- Tourist surge across all outdoor locations
+- Eastern Market strong, waterfront locations excellent
+- **Scoring adjustment:** +10 to tourist-facing locations
+
+**Thanksgiving Weekend:**
+- Friday: Locals shopping, tourists arriving
+- Saturday: Mixed - some tourists, some locals with family
+- Eastern Market typically open Saturday
+- **Scoring adjustment:** Normal, but note uncertainty
+
+### Holiday Checklist
+
+Add this to your data collection:
+
+```
+HOLIDAY CHECK - Saturday [DATE]
+
+□ Is this a holiday weekend? [YES/NO]
+□ Holiday name: [_____________]
+□ Eastern Market status: [Open / Closed / Uncertain]
+□ Expected tourist level: [High / Normal / Low]
+□ Arena/Convention special events? [YES/NO]
+□ Apply holiday scoring adjustments? [YES/NO]
+
+Notes: [Any special considerations]
+```
+
+---
+
 ## Step 1: Weather Forecast
 
 ### Required Data Points
@@ -467,3 +541,132 @@ Add these flags to your memo when relevant:
 | Washington.org | washington.org/find-dc-listings/dc-events |
 | Eventbrite | eventbrite.com/d/dc--washington/events/ |
 | DC.gov Calendar | calendar.dc.gov/
+
+---
+
+## Post-Saturday Review (Score Calibration)
+
+Complete this review by **Monday** after each Saturday to build data for score calibration.
+
+### Review Template
+
+```
+POST-SATURDAY REVIEW - [DATE]
+
+=== WHAT WE PREDICTED ===
+Truck A: [Morning Location] → [Afternoon Location]
+Truck B: [Morning Location] → [Afternoon Location]
+
+Morning Scores: [Location]: [Score], [Location]: [Score]
+Afternoon Scores: [Location]: [Score], [Location]: [Score]
+
+Expected Performance: [from memo]
+
+=== WHAT ACTUALLY HAPPENED ===
+
+TRUCK A:
+Morning Location: [Where deployed]
+  - Hours worked: [X:XX - X:XX]
+  - Revenue: $[XXX]
+  - Revenue/hour: $[XX]
+  - Observations: [Busy? Slow? Weather impact?]
+
+Afternoon Location: [Where deployed]
+  - Hours worked: [X:XX - X:XX]
+  - Revenue: $[XXX]
+  - Revenue/hour: $[XX]
+  - Did we relocate as planned? [Yes/No]
+  - Observations: [Busy? Slow? Event impact?]
+
+TRUCK B:
+Morning Location: [Where deployed]
+  - Hours worked: [X:XX - X:XX]
+  - Revenue: $[XXX]
+  - Revenue/hour: $[XX]
+  - Observations: [Busy? Slow? Weather impact?]
+
+Afternoon Location: [Where deployed]
+  - Hours worked: [X:XX - X:XX]
+  - Revenue: $[XXX]
+  - Revenue/hour: $[XX]
+  - Did we relocate as planned? [Yes/No]
+  - Observations: [Busy? Slow? Event impact?]
+
+=== CONDITIONS THAT DAY ===
+Actual Weather:
+  - Morning temp: [XX]°F
+  - Afternoon temp: [XX]°F
+  - Did it rain? [Yes/No, what time?]
+  - Wind issues? [Yes/No]
+
+Events:
+  - Did predicted events happen? [Yes/No]
+  - Surprise events we missed? [List]
+  - Eastern Market operating? [Yes/No]
+
+Competition:
+  - Competitors spotted? [Where?]
+
+=== PREDICTED VS ACTUAL ===
+
+| Location | Predicted Score | Actual $/hr | Notes |
+|----------|-----------------|-------------|-------|
+| [Morning 1] | [XX] | $[XX] | |
+| [Morning 2] | [XX] | $[XX] | |
+| [Afternoon 1] | [XX] | $[XX] | |
+| [Afternoon 2] | [XX] | $[XX] | |
+
+Performance vs Expectation: [Better / As Expected / Worse]
+
+=== CALIBRATION NOTES ===
+
+Score Adjustments to Consider:
+- [ ] [Location] base score seems [too high / too low] because [reason]
+- [ ] [Modifier] effect seems [too strong / too weak] because [reason]
+
+What would we do differently?
+- [Note for future similar conditions]
+
+Confidence in this week's data: [High / Medium / Low]
+```
+
+### Building the Calibration Dataset
+
+After 4-8 weeks of reviews, analyze patterns:
+
+1. **Revenue vs Score correlation**
+   - Plot $/hr against predicted score
+   - Strong correlation = scores are well-calibrated
+   - Weak correlation = base scores need adjustment
+
+2. **Location-specific patterns**
+   - Does Eastern Market consistently over/underperform its score?
+   - Does Navy Yard without games perform better/worse than predicted?
+
+3. **Modifier validation**
+   - Do weather modifiers match actual impact?
+   - Are event modifiers (+50 for games) accurate?
+
+4. **Time-of-day patterns**
+   - Are morning/afternoon base score ratios correct?
+   - Do relocations actually pay off?
+
+### Score Adjustment Process
+
+When you have enough data (4+ weeks):
+
+1. Calculate average $/hr for each location
+2. Rank locations by actual performance
+3. Compare to base score rankings
+4. Adjust base scores to match real-world ranking
+5. Test adjusted scores for 2-3 weeks
+6. Repeat
+
+**Example adjustment:**
+If Columbia Heights consistently earns $120/hr (ranking #3) but scores as #5, increase its base score to reflect reality.
+
+### Review File Location
+
+Save reviews to: `memos/reviews/review-YYYY-MM-DD.md`
+
+After accumulating reviews, create a calibration summary: `memos/calibration-summary.md`
