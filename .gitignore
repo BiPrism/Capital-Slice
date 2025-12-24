@@ -1,0 +1,15 @@
+# Windows artifacts
+nul
+
+# Local Claude settings
+.claude/settings.local.json
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor files
+*.swp
+*.swo
+*~
