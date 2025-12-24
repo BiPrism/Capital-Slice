@@ -1,7 +1,7 @@
 # Week 2 Progress: Testing, Evaluating & Improving
 
-**Last Updated:** December 23, 2025
-**Status:** In Progress
+**Last Updated:** December 24, 2025
+**Status:** Ready for Validation
 
 ---
 
@@ -38,7 +38,7 @@ Updated `data-gathering-guide.md` with:
 - Quick reference table of all URLs
 - Fallback strategies & troubleshooting section
 
-### 4. Re-Tested the Skill
+### 4. Re-Tested the Skill (v2)
 - Used improved data gathering process
 - Compared 3 weather sources (found 11°F variance)
 - Applied season awareness (skipped off-season teams)
@@ -46,30 +46,49 @@ Updated `data-gathering-guide.md` with:
 - Used fallback strategy for Convention Center
 - Output: `memos/positioning-memo-2025-12-27-v2.md`
 
+### 5. Final Test with All Improvements (v3)
+- Applied holiday modifier (-20 for Christmas week)
+- Used time-split weather calculations
+- Included Customer Fit guidance
+- Generated comprehensive memo with all new features
+- Output: `memos/positioning-memo-2025-12-27-v3.md`
+
+### 6. Created Validation Framework
+- Added Post-Saturday Review template to data-gathering-guide
+- Created blank review file for Dec 27: `memos/reviews/review-2025-12-27.md`
+- Ready to collect actual revenue data and compare to predictions
+
 ---
 
 ## Files Modified
 
 | File | Changes |
 |------|---------|
-| `.claude/skills/capital-slice-positioning/data-gathering-guide.md` | Major update - fallbacks, seasons, confidence levels |
+| `.claude/skills/capital-slice-positioning/data-gathering-guide.md` | Fallbacks, seasons, confidence levels, holiday awareness, post-Saturday review template |
+| `.claude/skills/capital-slice-positioning/scoring-algorithm.md` | Base score documentation, holiday modifiers, time-split weather |
+| `.claude/skills/capital-slice-positioning/location-scoring-reference.md` | Customer Fit profiles for all 10 locations |
+| `.claude/skills/capital-slice-positioning/product-testing-framework.md` | NEW - A/B testing, conversion rates, margin calculations |
 | `memos/positioning-memo-2025-12-27.md` | Test 1 output |
 | `memos/positioning-memo-2025-12-27-v2.md` | Test 2 output (improved) |
+| `memos/positioning-memo-2025-12-27-v3.md` | Test 3 output (all improvements applied) |
+| `memos/reviews/review-2025-12-27.md` | Blank review template for validation |
 
 ---
 
 ## Still To Do
 
-### Identified Improvements Not Yet Implemented
+### Future Improvements (Lower Priority)
 1. **Data validation** - Automated checks for date errors, missing data
 
-### Recently Completed
-2. **Base score documentation** - Added star-to-score mapping in `scoring-algorithm.md`
-3. **Holiday patterns** - Added Holiday Awareness section to `data-gathering-guide.md` and Holiday Modifier (Step 4b) to `scoring-algorithm.md`
-4. **Time-split weather** - Added explicit guidance in Step 2 and updated worked example to show separate morning/afternoon weather calculations
-5. **Scoring refinements** - Converted to feedback loop: Added Post-Saturday Review template to `data-gathering-guide.md` for collecting actual revenue data to calibrate scores over time
-6. **Customer Fit profiles** - Added qualitative demographic/pizza fit/price sensitivity assessments to each location in `location-scoring-reference.md`
-7. **Product Testing Framework** - New file `product-testing-framework.md` with conversion rate estimation, A/B test protocols, margin calculations, and decision framework for testing slice size, shape, pricing, combos
+### Completed This Session
+1. **Base score documentation** - Added star-to-score mapping in `scoring-algorithm.md`
+2. **Holiday patterns** - Added Holiday Awareness section and Holiday Modifier (Step 4b)
+3. **Time-split weather** - Added explicit guidance and updated worked example
+4. **Scoring refinements** - Converted to feedback loop with Post-Saturday Review template
+5. **Customer Fit profiles** - Added demographic/pizza fit/price sensitivity to all locations
+6. **Product Testing Framework** - New file for A/B testing slice size, pricing, combos
+7. **v3 Positioning Memo** - Generated with all improvements applied
+8. **Validation Template** - Created blank review file for Dec 27
 
 ### Open Question (Resolved)
 > "Where does the base score come from?"
@@ -78,25 +97,44 @@ Updated `data-gathering-guide.md` with:
 
 ---
 
-## To Continue This Work
+## Next Steps: Validation
 
-1. Open Claude Code in this folder
-2. Say: "Continue Week 2 improvements" or reference this file
-3. Pick up from the "Still To Do" section above
+### Saturday, December 27, 2025
+1. Run trucks at recommended locations:
+   - Truck A: Eastern Market (AM) → Georgetown (PM)
+   - Truck B: Dupont Circle (AM) → National Mall (PM)
+2. Collect actual revenue, hours, and observations
+
+### Monday, December 29, 2025
+1. Complete `memos/reviews/review-2025-12-27.md`
+2. Compare predicted scores to actual $/hr
+3. Identify any score adjustments needed
+4. Note whether holiday modifier (-20) was accurate
+
+### After 4-8 Weeks of Data
+1. Analyze patterns in review data
+2. Adjust base scores if needed
+3. Validate conversion rate estimates
+4. Refine holiday/weather modifiers
 
 ---
 
 ## Test Results Comparison
 
-| Aspect | Test 1 | Test 2 |
-|--------|--------|--------|
-| Weather sources | 1 | 3 |
-| Season awareness | No | Yes |
-| Home/Away check | Implicit | Explicit |
-| Confidence levels | None | Yes |
-| Same recommendation? | Yes | Yes |
+| Aspect | Test 1 (v1) | Test 2 (v2) | Test 3 (v3) |
+|--------|-------------|-------------|-------------|
+| Weather sources | 1 | 3 | 3 |
+| Season awareness | No | Yes | Yes |
+| Home/Away check | Implicit | Explicit | Explicit |
+| Confidence levels | None | Yes | Yes |
+| Holiday modifiers | No | No | Yes (-20) |
+| Time-split weather | No | No | Yes |
+| Customer Fit guidance | No | No | Yes |
+| Same recommendation? | Yes | Yes | Yes |
 
-Both tests produced: Eastern Market → Georgetown (Truck A), Dupont → Mall (Truck B)
+All three tests produced: **Eastern Market → Georgetown (Truck A), Dupont → Mall (Truck B)**
+
+The consistent recommendation across all versions validates the core algorithm. The v3 improvements add context (holiday impacts, customer fit) without changing the fundamental logic.
 
 ---
 
